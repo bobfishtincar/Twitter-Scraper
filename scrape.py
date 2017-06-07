@@ -14,10 +14,10 @@ tree = html.fromstring(html_text)
 
 tweets = tree.xpath('//div[@class="js-tweet-text-container"]/p/text()')
 
-with open('savedtweets.txt', 'w') as my_file:
+with open('savedtweets.txt', 'a') as my_file:
     for tweet in tweets:
         print(tweet)
-        want_save = input('Save?')
+        want_save = input('')
 
         if len(want_save) > 0:
-            my_file.write(tweet + '\n')
+            my_file.write('\n' + tweet)
